@@ -4,16 +4,7 @@
 {% block title %} My personal blog. {% endblock %}
 {% block css %} <link rel="stylesheet" href=" {% static 'blog/blog.css' %} "> {% endblock  %}
 {% block body %}
-    <nav>
-        <a href="">Мой блог</a>
-        
-    </nav>
-    <ul>
-        {% for post in postlist %}
-        <li><a href="">{{post | title}}</a> </li>
-        
-        {% endfor %}
-    </ul>
+
 
     <header id='main-navigation'>
         <h1> <a href="">На главную</a> </h1>
@@ -26,9 +17,9 @@
     <section id='welcome'>
         <header>
             <img src="" alt="Алексей - автор этого блога.">
-            <h2>БЛОГ ЗАХАРЧЕНКО АЛЕКСЕЯ</h2>
-            <p>Здравствуйте. Меня зовут Алексей и мне нравится вести блог о своих успехах в разработке и личных успехах.</p>
+            <h2>БЛОГ ЗАХАРЧЕНКО АЛЕКСЕЯ</h2>            
         </header>
+        <p>Здравствуйте. Меня зовут Алексей и мне нравится вести блог о своих успехах в разработке и личных успехах.</p>
     </section>
 
     <section id='latest-post'>
