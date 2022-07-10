@@ -3,7 +3,7 @@ from . import views
 
 
 urlpatterns = {
-    path('', views.index, name = "inex"),
-    path('blog', views.blogposts, name = "posts"),
+    path('', views.index, name = "index"),
+    path('blog', views.blog, name = "blog"),
     path('blog/<slug:name>', views.post, name = "post")
 }
