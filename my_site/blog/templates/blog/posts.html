@@ -1,25 +1,22 @@
 {% extends "base.html" %}
-
-{% block title %} Blog posts. {% endblock %}
+{% load static %}
+{% block title %} Блог {% endblock %}
+{% block css %}
+    <link rel="stylesheet" href=" {% static 'blog/post.css' %} "> 
+    <link rel="stylesheet" href="{%static 'blog/posts.css'%}">
+{% endblock  %}
 {% block body %}
 
 
-    <header id='main-navigation'>
-        <nav>
-            
-
-        </nav>
-
-
-    </header>
-
-
-    <section id='welcome'>
-        <header>
-            <img src="" alt="Aleksei - the king of the world!">
-            <h2>Alexey's blog</h2>
-
-        </header>
+    <section id='all-posts'>
+        <h2>Мой Блог.</h2>
+        <ul>
+            {% include "blog/includes/post_preview.html" %}
+            {% include "blog/includes/post_preview.html" %}
+            {% include "blog/includes/post_preview.html" %}
+            {% include "blog/includes/post_preview.html" %}
+            {% include "blog/includes/post_preview.html" %}
+        </ul>
     </section>
     
 {% endblock %}

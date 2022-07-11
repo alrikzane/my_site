@@ -1,18 +1,14 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block title %} My personal blog. {% endblock %}
-{% block css %} <link rel="stylesheet" href=" {% static 'blog/blog.css' %} "> {% endblock  %}
+{% block css %}
+    <link rel="stylesheet" href=" {% static 'blog/post.css' %} "> 
+    <link rel="stylesheet" href=" {% static 'blog/index.css' %} "> 
+{% endblock  %}
 {% block body %}
 
 
-    <header id='main-navigation'>
-        <h1> <a href="">На главную</a> </h1>
-        <nav>
-            <a href="">Блог</a>
-        </nav>
 
-    </header>
 
     <section id='welcome'>
         <header>
@@ -25,22 +21,9 @@
     <section id='latest-post'>
         <h2>Мои последние посты.</h2>
         <ul>
-            <li>  
-                <article class="post">                   
-                    <a href="">
-                        <img src="{% static "blog/img/chtoto.jpg" %}" alt="Что-то о чем-то" />
-                        <div class="post__content">
-                            <h3>Интересное чтиво.</h3>
-                            <p>Здесь расказывается о чем-то, что связанно с картинкой выше. В действительности нужно просто
-                                написать несколько строк текста, чтобы заполнить место. Чтобы страница не выглядела пустой
-                                нужно написать буквально несколько строчек не о чем. Это не трудно сделать, если представить,
-                                что пишешь диплом.
-                            </p>
-                        </div>
-                    </a>
-
-                </article> 
-            </li>
+            {% include "blog/includes/post_preview.html" %}
+            {% include "blog/includes/post_preview.html" %}
+            {% include "blog/includes/post_preview.html" %}
         </ul>
     </section>
     <section id='about'>

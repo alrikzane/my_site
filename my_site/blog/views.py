@@ -3,9 +3,7 @@ from django.shortcuts import render
 
 def index(request):
 
-    return render(request, "blog/index.html", {
-        'postlist' : [i for i in range(3)]
-    })
+    return render(request, "blog/index.html")
 
 
 def blog(request):
