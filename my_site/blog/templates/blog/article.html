@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Блог {% endblock %}
+{% block css %}
+    <link rel="stylesheet" href=" {% static 'blog/post.css' %} ">
+
+
+{% endblock  %}
+
+{% block body %}
+    <section id="summary">
+        <h2> Post title </h2>
+        <article>
+            <img src="{% static "blog/img/mountains.jpg" %}" alt="Post title">
+            <address>By alex</address>
+            <div>
+                Last updated on <time> July 11th. </time>
+            </div>
+        </article>
+    </section>
+
+    <main>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias deleniti, error 
+            ipsum dolorem tempora voluptas repellendus eum corrupti aperiam sit suscipit voluptatem doloremque, 
+            tenetur ipsam dicta nobis quos non porro!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias deleniti, error 
+            ipsum dolorem tempora voluptas repellendus eum corrupti aperiam sit suscipit voluptatem doloremque, 
+            tenetur ipsam dicta nobis quos non porro!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias deleniti, error 
+            ipsum dolorem tempora voluptas repellendus eum corrupti aperiam sit suscipit voluptatem doloremque, 
+            tenetur ipsam dicta nobis quos non porro!
+        </p>
+    </main>
+{% endblock %}

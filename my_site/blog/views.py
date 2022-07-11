@@ -2,22 +2,14 @@ from django.http import Http404
 from django.shortcuts import render
 
 def index(request):
-
     return render(request, "blog/index.html")
 
 
 def blog(request):
-    try:
-        return render(request, "blog/posts.html", {
-            'postlist' : [i for i in range(3)]
-        })
-    except:
-        raise Http404()
+    return render(request, "blog/posts.html")
+
 
 def post(request, name):
-    try:
-        return render(request, "blog/post.html", {
-            'post' : name
-        })
-    except:
-        raise Http404()
+    return render(request, "blog/article.html", {
+        'article' : 'cool article'
+    })
