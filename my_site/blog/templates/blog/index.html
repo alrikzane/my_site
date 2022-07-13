@@ -21,9 +21,11 @@
     <section id='latest-post'>
         <h2>Мои последние посты.</h2>
         <ul>
+            {% for post in posts %}
+
             {% include "blog/includes/post_preview.html" %}
-            {% include "blog/includes/post_preview.html" %}
-            {% include "blog/includes/post_preview.html" %}
+
+            {% endfor %}
         </ul>
     </section>
     <section id='about'>
