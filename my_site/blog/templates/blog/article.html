@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %} Блог {% endblock %}
+{% block title %} {{ article.title|title}} {% endblock %}
 {% block css %}
     <link rel="stylesheet" href=" {% static 'blog/post.css' %} ">
 
@@ -9,31 +9,20 @@
 
 {% block body %}
     <section id="summary">
-        <h2> Post title </h2>
+        <h2> {{article.title|title}} </h2>
         <article>
-            <img src="{% static "blog/img/mountains.jpg" %}" alt="Post title">
-            <address>By alex</address>
+            <img src="{% static "blog/img/"|add:article.image %}" alt="{{article.title}}">
+            <address>Автор поста {{article.author}}</address>
             <div>
-                Last updated on <time> July 11th. </time>
+                Последнее обновление <time>{{article.date|date:"d M Y"}} </time>
             </div>
         </article>
     </section>
 
     <main>
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias deleniti, error 
-            ipsum dolorem tempora voluptas repellendus eum corrupti aperiam sit suscipit voluptatem doloremque, 
-            tenetur ipsam dicta nobis quos non porro!
+            {{article.content|linebreaks}}
         </p>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias deleniti, error 
-            ipsum dolorem tempora voluptas repellendus eum corrupti aperiam sit suscipit voluptatem doloremque, 
-            tenetur ipsam dicta nobis quos non porro!
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias deleniti, error 
-            ipsum dolorem tempora voluptas repellendus eum corrupti aperiam sit suscipit voluptatem doloremque, 
-            tenetur ipsam dicta nobis quos non porro!
-        </p>
+       
     </main>
 {% endblock %}
