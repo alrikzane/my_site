@@ -1,9 +1,12 @@
+from turtle import title
 from django.contrib import admin
 from .models import Author, Tag, Post
 
 
 class PostAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug" : ("title",)}
+    list_display = ('author', 'title', 'date')
+    list_filter = ('author', 'date', 'tag')
 
 
 
