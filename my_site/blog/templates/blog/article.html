@@ -10,9 +10,15 @@
 {% block body %}
     <section id="summary">
         <h2> {{article.title|title}} </h2>
+        {% for tag in tags %}
+        <span class='tag'>{{tag.caption}}</span>            
+
+        {% endfor%}
+
+        
         <article>
-            <img src="{% static "blog/img/"|add:article.image %}" alt="{{article.title}}">
-            <address>Автор поста {{article.author}}</address>
+            <img src="{% static "blog/img/"|add:article.image_name %}" alt="{{article.title}}">
+            <address>Автор поста <a href="mailto:{{article.author.email}}">{{article.author}}</a>    </address>
             <div>
                 Последнее обновление <time>{{article.date|date:"d M Y"}} </time>
             </div>
