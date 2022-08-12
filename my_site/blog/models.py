@@ -23,13 +23,17 @@ class Post(models.Model):
     tag = models.ManyToManyField(Tag)
     title = models.CharField(max_length=150)
     excerpt = models.CharField(max_length=300)
-    image_name = models.CharField(max_length=150)
+    image = models.ImageField(upload_to = 'images', null = True)
     date = models.DateField(auto_now=True)
     slug = models.SlugField(unique=True, db_index=True)
     content = models.TextField(validators=[MinLengthValidator(10)])
+    
 
-
-
+class Comment(models.Model):
+    name = models.CharField(max_length=30)
+    e_mail = models.EmailField(null=True)
+    comment = models.TextField(max_length=400)
+    post = models.ForeignKey(Post, null=True, on_delete=models.CASCADE, related_name='comments')
 
 
 

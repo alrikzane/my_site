@@ -9,7 +9,7 @@ body {
 }
 
 #summary {
-  margin: 5rem auto;
+  margin: 8rem auto 3rem auto;
   padding: 2rem;
   width: 90%;
   border-radius: 16px;
@@ -145,4 +145,107 @@ main {
 
 .tag a{
   color: #390281;
+}
+#comment-form {
+  margin: 3rem auto;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 40rem;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+}
+
+#comment-form button{
+  font: inherit;
+  background-color: #390281;
+  color: white;
+  border: 1px solid #390281;
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#comment-form button:hover{
+  background-color: #8451c7;
+  border-color: #8451c7;
+}
+
+
+.form-control {
+  margin: 0 0 1rem 0
+}
+
+.form-control label{
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.form-control input,
+.form-control textarea {
+  display: block;
+  width: 100%;
+  font: inherit;
+  padding: 0.25rem;
+  border-radius: 6px;
+  border: 1px solid rgb(180, 177, 177);
+}
+
+.errorlist{
+  list-style: none;
+  margin: 0.5rem 0;
+  padding: 0;
+  color: rgba(255, 13, 13, 0.966)
+}
+
+.invalid label{
+  color: rgba(255, 13, 13, 0.966)
+}
+
+.invalid input,
+.invalid textarea{
+  border-color: red;
+  background-color: rgb(247, 220, 234);
+}
+
+#alert {
+  margin: 8rem auto 3rem auto;
+  border: 1px solid rgba(255, 13, 13, 0.966);
+  background-color: rgb(247, 220, 234);
+  padding: 1rem;
+  width: 90%;
+  max-width: 40rem;
+}
+#alert a{
+  text-decoration: none;
+  border: 1px solid rgba(255, 13, 13, 0.966);
+  background-color: rgb(151, 23, 89);
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  color: white;
+}
+
+#comments {
+  margin: 3rem auto;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 60rem;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  padding: 1rem 2rem;
+}
+
+#comments ul{
+  list-style: none;
+  margin: none;
+  padding: 0;
+}
+
+#comments li{
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #ccc;
+}
+
+#comments li:last-of-type{
+  border-bottom: none;
 }

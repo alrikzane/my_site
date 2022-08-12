@@ -8,6 +8,12 @@
 {% endblock  %}
 
 {% block body %}
+{% if comment.errors %}
+<div id='alert'>
+    <h2 >Отправка комментария не удалась, проверьте поля ввода!</h2>
+    <a href="#comment-form">Исправить</a>
+</div>    
+{% endif %}
     <section id="summary">
         <h2> {{article.title|title}} </h2>
         {% for tag in tags %}
@@ -17,7 +23,7 @@
 
         
         <article>
-            <img src="{% static "blog/img/"|add:article.image_name %}" alt="{{article.title}}">
+            <img src="{{ article.image.url }}" alt="{{article.title}}">
             <address>Автор поста <a href="mailto:{{article.author.email}}">{{article.author}}</a>    </address>
             <div>
                 Последнее обновление <time>{{article.date|date:"d M Y"}} </time>
@@ -28,7 +34,34 @@
     <main>
         <p>
             {{article.content|linebreaks}}
-        </p>
-       
+        </p>       
     </main>
+
+    <section id='comments'>
+        <ul>
+            {% for comment in comments  %}
+                <li>
+                    <h2>{{comment.name}}</h2>
+                    <p>{{comment.comment|linebreaks}}</p>
+                </li>                
+            {% endfor %}
+
+        </ul>
+    </section>
+    
+
+    <section id = 'comment-form'>
+        <h1>Ваш комментарий</h1>
+        <form action="{% url "article" article.slug %}" method='POST'>
+            {% csrf_token %}
+            {% for field in comment  %}
+                <div class="form-control {% if field.errors %}invalid{% endif %}">
+                        {{field.label_tag}}
+                        {{field}}
+                        {{field.errors}}
+                </div>  
+            {% endfor %}                
+            <button>Оставить комментарий</button>
+           </form>
+    </section>
 {% endblock %}
